@@ -17,5 +17,6 @@ aconfig_value_set {
     name: "aconfig_value_set-lineage-ap2a",
     values: [
         "aconfig-values-ap2a-com.android.settingslib.media.flags-all",
+        "aconfig-values-ap2a-com.android.systemui.flags-all",
     ],
 }
