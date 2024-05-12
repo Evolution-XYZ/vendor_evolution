@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-#$1=TARGET_DEVICE, $2=PRODUCT_OUT, $3=FILE_NAME
+#$1=TARGET_DEVICE, $2=PRODUCT_OUT, $3=FILE_NAME $4=EvolutionX Version
 existingOTAjson=./evolution/OTA/builds/$1.json
 output=$2/$1.json
 
@@ -33,10 +33,7 @@ if [ -f $existingOTAjson ]; then
 	oem=`grep -n "\"oem\"" $existingOTAjson | cut -d ":" -f 3 | sed 's/"//g' | sed 's/,//g' | xargs`
 	device=`grep -n "\"device\"" $existingOTAjson | cut -d ":" -f 3 | sed 's/"//g' | sed 's/,//g' | xargs`
 	filename=$3
-	version=`echo "$3" | cut -d'-' -f5`
-	v_max=`echo "$version" | cut -d'.' -f1 | cut -d'v' -f2`
-	v_min=`echo "$version" | cut -d'.' -f2`
-	version=`echo $v_max.$v_min`
+	version=`echo $4`
 	buildprop=$2/system/build.prop
 	linenr=`grep -n "ro.system.build.date.utc" $buildprop | cut -d':' -f1`
 	timestamp=`sed -n $linenr'p' < $buildprop | cut -d'=' -f2`
@@ -84,10 +81,7 @@ if [ -f $existingOTAjson ]; then
 }' >> $output
 else
 	filename=$3
-	version=`echo "$3" | cut -d'-' -f5`
-	v_max=`echo "$version" | cut -d'.' -f1 | cut -d'v' -f2`
-	v_min=`echo "$version" | cut -d'.' -f2`
-	version=`echo $v_max.$v_min`
+        version=`echo $4`
 	buildprop=$2/system/build.prop
 	linenr=`grep -n "ro.system.build.date.utc" $buildprop | cut -d':' -f1`
 	timestamp=`sed -n $linenr'p' < $buildprop | cut -d'=' -f2`

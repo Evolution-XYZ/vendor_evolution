@@ -8,7 +8,7 @@ endif
 ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.evolution.build.version=$(LINEAGE_VERSION) \
     ro.evolution.display.version=$(LINEAGE_DISPLAY_VERSION) \
-    ro.evolution.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
+    ro.evolution.version=$(EVO_VERSION) \
     ro.modversion=$(EVO_VERSION) \
     ro.evolutionlegal.url=https://evolution-x.org/legal.php
 
