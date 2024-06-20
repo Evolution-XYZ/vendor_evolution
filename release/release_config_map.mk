@@ -13,10 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Get the directory for this file, and use that instead of a fixed path.
-local_dir := $(dir $(lastword $(MAKEFILE_LIST)))
-
-# Attach the flag value definitions to the various release configurations.
-$(call declare-release-config, ap2a, $(local_dir)build_config/ap2a.scl)
-
-local_dir :=
+TARGET_RELEASE := $(shell grep "BUILD_ID" build/make/core/build_id.mk | tail -1 | cut -d '=' -f 2 | cut -d '.' -f 1 | tr '[:upper:]' '[:lower:]')
