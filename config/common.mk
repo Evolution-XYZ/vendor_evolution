@@ -209,6 +209,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SystemUIFlagFlipper
 
+# GameSpace
+PRODUCT_PACKAGES += \
+    GameSpace
+
 # Storage manager
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.storage_manager.enabled=true
