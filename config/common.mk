@@ -213,9 +213,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     GameSpace
 
+ifeq ($(WITH_GMS),false)
 # Storage manager
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.storage_manager.enabled=true
+endif
 
 # Default wifi country code
 PRODUCT_SYSTEM_PROPERTIES += \
