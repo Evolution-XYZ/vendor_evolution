@@ -1,0 +1,34 @@
+flag_value {
+  package: "com.android.server.notification"
+  name: "polite_notifications"
+  state: ENABLED
+  permission: READ_ONLY
+}
+
+flag_value {
+  package: "com.android.server.notification"
+  name: "cross_app_polite_notifications"
+  state: ENABLED
+  permission: READ_ONLY
+}
+
+flag_value {
+  package: "com.android.server.notification"
+  name: "vibrate_while_unlocked"
+  state: ENABLED
+  permission: READ_ONLY
+}
+
+flag_value {
+  package: "com.android.server.notification"
+  name: "autogroup_summary_icon_update"
+  state: ENABLED
+  permission: READ_ONLY
+}
+
+flag_value {
+  package: "com.android.server.notification"
+  name: "screenshare_notification_hiding"
+  state: ENABLED
+  permission: READ_ONLY
+}

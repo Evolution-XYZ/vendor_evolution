@@ -1,0 +1,7 @@
+aconfig_values {
+    name: "aconfig-values-ap2a-com.android.server.notification.flags-all",
+    package: "com.android.server.notification",
+    srcs: [
+        "*.textproto",
+    ],
+}
