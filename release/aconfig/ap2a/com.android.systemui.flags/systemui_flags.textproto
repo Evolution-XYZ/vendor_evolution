@@ -14,6 +14,13 @@ flag_value {
 
 flag_value {
   package: "com.android.systemui"
+  name: "haptic_volume_slider"
+  state: ENABLED
+  permission: READ_ONLY
+}
+ 
+flag_value {
+  package: "com.android.systemui"
   name: "haptic_brightness_slider"
   state: ENABLED
   permission: READ_ONLY
