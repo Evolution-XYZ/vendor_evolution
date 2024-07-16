@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2024 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TARGET_RELEASE := $(shell grep "BUILD_ID" build/make/core/build_id.mk | tail -1 | cut -d '=' -f 2 | cut -d '.' -f 1 | tr '[:upper:]' '[:lower:]')
 
-# Get the directory for this file, and use that instead of a fixed path.
-local_dir := $(dir $(lastword $(MAKEFILE_LIST)))
+load("//build/make/core/release_config.scl", "value")
 
-# Attach the flag value definitions to the various release configurations.
-$(call declare-release-config, $(TARGET_RELEASE), $(local_dir)build_config/$(TARGET_RELEASE).scl)
-
-local_dir :=
+values = [
+    # keep-sorted start numeric=yes
+    value("RELEASE_ACONFIG_VALUE_SETS", "aconfig_value_set-custom-ap2a"),
+    # keep-sorted end
+]
